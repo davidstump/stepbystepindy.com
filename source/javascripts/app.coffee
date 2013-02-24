@@ -14,7 +14,6 @@
 
   highlightActiveSection: (bodyClass) ->
     section = @getCurrentSection(bodyClass)
-    console.log section
     $("[data-page=#{section}]").attr("id", "current")
 
   bind: ->
