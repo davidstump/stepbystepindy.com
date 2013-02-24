@@ -12,6 +12,12 @@
 # end
 
 ###
+# New Relic
+###
+
+require 'newrelic_rpm'
+
+###
 # Page options, layouts, aliases and proxies
 ###
 
