@@ -4,9 +4,48 @@
     %meta{:charset => "utf-8"}/
     / Always force latest IE rendering engine or request Chrome Frame
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "AWIeDwd0VkJtxX+PscVq7pZzFMywUqmEaRaXwLDeNOU=", :name => "verify-v1"}/
+    %meta{:content => "Indianapolis Pediatrics, Indianapolis Pediatricians, Pediatricians Indy, Pediatrics Indy, Step by Step, Indianapolis Kids, Indianapolis Children, Child Care Indianapolis, Children Health, Chilren's Heath Indy, Children's Doctor. kid's doctor. newborn indianapolis, indianapolis babies, indianapolis families", :name => "keywords"}/
+    %meta{:content => "Step By Step Pediatrics, LLC in Indianapolis, IN, strives to provide excellent and personal medical care to our pediatric patients in a clean, safe, and friendly environment.", :name => "description"}/
+    %meta{:content => "Step By Step Pediatrics, LLC - Indianapolis, IN", :name => "title"}/
     / Use title if it's in the page YAML frontmatter
-    %title= data.page.title || "The Middleman"
-    = stylesheet_link_tag "normalize", "all"
-    = javascript_include_tag  "all"
+    %title= "Step-by-Step Pediatrics | Indianapolis, IN | About Us"
+    = stylesheet_link_tag "all"
+    = javascript_include_tag  "all", "ac_runactivecontent"
   %body{:class => page_classes}
-    = yield
+    #container
+      %table{:border => "0", :width => "100%"}
+        %tr
+          %td{:align => "center", :bgcolor => "#000000", :valign => "top"}
+            :javascript
+              AC_FL_RunContent( 'codebase','http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0','width','635','height','127','title','Step By Step Pediatrics, LLC','src','/images/header','quality','high','pluginspage','http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash','movie','/images/header' ); //end AC code
+            %noscript
+              %object{:classid => "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000", :codebase => "http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0", :height => "127", :title => "Step By Step Pediatrics, LLC", :width => "635"}
+                %param{:name => "movie", :value => "/images/header.swf"}/
+                %param{:name => "quality", :value => "high"}/
+                %embed{:height => "127", :pluginspage => "http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash", :quality => "high", :src => "/images/header.swf", :type => "application/x-shockwave-flash", :width => "635"}
+      #header
+        %ul
+          %li{data: {page: 'index'}}
+            %a{:href => "index.html"} Home
+          %li{data: {page: 'about'}}
+            %a{:href => "about.html"} About Us
+          %li{data: {page: 'new'}}
+            %a{:href => "new.html"} New Patients
+          %li{data: {page: 'links'}}
+            %a{:href => "links.html"} Links
+          %li{data: {page: 'contact'}}
+            %a{:href => "contact.html"} Contact
+      
+      = yield
+
+
+      %p.footer{:align => "left"} ©2007 Step by Step Pediatrics, LLC
+      :javascript
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      :javascript
+        try {
+          var pageTracker = _gat._getTracker("UA-10269676-1");
+          pageTracker._trackPageview();
+        } catch(err) {}
