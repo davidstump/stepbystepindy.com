@@ -118,7 +118,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  middleman (~> 3.0.11)
+  middleman
   middleman-smusher
   newrelic_rpm
   thin
